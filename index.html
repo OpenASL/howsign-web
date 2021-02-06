@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Search multiple ASL dictionaries" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>howsign: search multiple ASL dictionaries</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div
+      class="min-h-screen flex justify-center bg-gray-50 py-2 px-4 sm:px-6 lg:px-8"
+    >
+      <div class="max-w-md w-full space-y-8">
+        <div>
+          <a href="/">
+            <h1 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+              👋 howsign
+            </h1>
+          </a>
+          <p class="mt-2 text-center text-sm text-gray-600">
+            search multiple ASL dictionaries
+          </p>
+        </div>
+        <form class="mt-8 space-y-6" id="search">
+          <input type="hidden" name="remember" value="true" />
+          <div class="bg-white flex items-center rounded-full shadow-lg">
+            <label for="term" class="sr-only">Word or phrase</label>
+            <input
+              autofocus
+              class="rounded-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 font-semibold"
+              placeholder="Word or phrase..."
+              value="PIZZA"
+              type="search"
+              name="term"
+              maxlength="30"
+              id="input"
+            />
+          </div>
+        </form>
+        <ul>
+          <li class="my-1">
+            <a
+              class="my-4 text-indigo-600 hover:text-indigo-500"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="#"
+              id="handspeak"
+            ></a>
+          </li>
+          <li class="my-1">
+            <a
+              class="my-4 text-indigo-600 hover:text-indigo-500"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="#"
+              id="lifeprint"
+            ></a>
+          </li>
+          <li class="my-1">
+            <a
+              class="text-indigo-600 hover:text-indigo-500"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="#"
+              id="signingSavvy"
+            ></a>
+          </li>
+          <li class="my-1">
+            <a
+              class="text-indigo-600 hover:text-indigo-500"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="#"
+              id="spreadTheSign"
+            ></a>
+          </li>
+          <li class="my-1">
+            <a
+              class="text-indigo-600 hover:text-indigo-500"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="#"
+              id="spreadTheSign"
+            ></a>
+          </li>
+          <li class="my-1">
+            <a
+              class="text-indigo-600 hover:text-indigo-500"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="#"
+              id="youglish"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
