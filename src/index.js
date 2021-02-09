@@ -1,19 +1,18 @@
 import page from "page";
 import qs from "qs";
 
+page.configure({ window: window });
 const $ = document.querySelector.bind(document);
-const handspeak = $("#handspeak");
-const lifeprint = $("#lifeprint");
-const signingSavvy = $("#signingSavvy");
-const spreadTheSign = $("#spreadTheSign");
-const youglish = $("#youglish");
-const input = $("#input");
-const ALL = [handspeak, lifeprint, signingSavvy, spreadTheSign, youglish];
 const title = "howsign ❘ search multiple ASL dictonaries";
 
-page.configure({ window: window });
-
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
+  const handspeak = $("#handspeak");
+  const lifeprint = $("#lifeprint");
+  const signingSavvy = $("#signingSavvy");
+  const spreadTheSign = $("#spreadTheSign");
+  const youglish = $("#youglish");
+  const input = $("#input");
+  const ALL = [handspeak, lifeprint, signingSavvy, spreadTheSign, youglish];
   page("*", (ctx) => {
     const term = qs.parse(ctx.querystring).s;
     if (term) {
@@ -38,6 +37,7 @@ window.addEventListener("load", () => {
         elem.href = "#";
       });
       input.value = "";
+
       document.title = title;
     }
   });
@@ -46,7 +46,8 @@ window.addEventListener("load", () => {
   $("#search").addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const term = formData.get("term");
+    const term = formData.get("term").trim();
+    if (!term) return;
     const encodedTerm = encodeURIComponent(term);
     page(`/?s=${encodedTerm}`);
   });
