@@ -47,8 +47,11 @@ window.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const term = formData.get("term").trim();
-    if (!term) return;
-    const encodedTerm = encodeURIComponent(term);
-    page(`/?s=${encodedTerm}`);
+    if (term) {
+      const encodedTerm = encodeURIComponent(term);
+      page(`/?s=${encodedTerm}`);
+    } else {
+      page("/");
+    }
   });
 });
