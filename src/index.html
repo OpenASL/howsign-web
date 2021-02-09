@@ -7,10 +7,10 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="assets/img/apple-touch-icon.png"
+      href="./assets/img/apple-touch-icon.png"
     />
-    <link rel="shortcut icon" href="assets/img/favicon.ico" />
-    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>howsign: search multiple ASL dictionaries</title>
   </head>
 
@@ -30,14 +30,12 @@
           </p>
         </div>
         <form class="mt-8 space-y-6" id="search">
-          <input type="hidden" name="remember" value="true" />
           <div class="bg-white flex items-center rounded-full shadow-lg">
             <label for="term" class="sr-only">Word or phrase</label>
             <input
               autofocus
               class="rounded-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 font-semibold"
               placeholder="Word or phrase..."
-              value="PIZZA"
               type="search"
               name="term"
               maxlength="30"
@@ -104,6 +102,6 @@
       </div>
     </div>
 
-    <script src="assets/js/index.js"></script>
+    <script type="module" src="assets/js/index.js"></script>
   </body>
 </html>

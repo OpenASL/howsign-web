@@ -38,11 +38,15 @@ window.addEventListener("load", () => {
   });
   page();
 
-  document.getElementById("search").addEventListener("submit", (e) => {
-    const formData = new FormData(e.target);
-    const term = formData.get("term");
-    const encodedTerm = encodeURIComponent(term);
-    page(`/?s=${encodedTerm}`);
-    e.preventDefault();
-  });
+  document.getElementById("search").addEventListener(
+    "submit",
+    (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const term = formData.get("term");
+      const encodedTerm = encodeURIComponent(term);
+      page(`/?s=${encodedTerm}`);
+    },
+    true
+  );
 });
