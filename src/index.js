@@ -1,12 +1,13 @@
 import page from "page";
 import qs from "qs";
 
-const handspeak = document.getElementById("handspeak");
-const lifeprint = document.getElementById("lifeprint");
-const signingSavvy = document.getElementById("signingSavvy");
-const spreadTheSign = document.getElementById("spreadTheSign");
-const youglish = document.getElementById("youglish");
-const input = document.getElementById("input");
+const $ = document.querySelector.bind(document);
+const handspeak = $("#handspeak");
+const lifeprint = $("#lifeprint");
+const signingSavvy = $("#signingSavvy");
+const spreadTheSign = $("#spreadTheSign");
+const youglish = $("#youglish");
+const input = $("#input");
 const ALL = [handspeak, lifeprint, signingSavvy, spreadTheSign, youglish];
 
 page.configure({ window: window });
@@ -38,7 +39,7 @@ window.addEventListener("load", () => {
   });
   page();
 
-  document.getElementById("search").addEventListener("submit", (e) => {
+  $("#search").addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const term = formData.get("term");
