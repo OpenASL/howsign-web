@@ -18,15 +18,15 @@ window.addEventListener("load", () => {
       const termUpperCased = term.toUpperCase();
       input.value = term.toUpperCase();
       const encodedTerm = encodeURIComponent(term);
-      handspeak.innerText = "🤲 Handspeak - Search results";
+      handspeak.innerText = "🤲 Handspeak - Search results ↗";
       handspeak.href = `https://www.google.com/search?&q=site%3Ahandspeak.com+${encodedTerm}`;
-      lifeprint.innerText = "🧬 Lifeprint - Search results";
+      lifeprint.innerText = "🧬 Lifeprint - Search results ↗";
       lifeprint.href = `https://www.google.com/search?&q=site%3Alifeprint.com+${encodedTerm}`;
-      signingSavvy.innerText = `🤝 SigningSavvy - Sign for ${termUpperCased}`;
+      signingSavvy.innerText = `🤝 SigningSavvy - Sign for ${termUpperCased} ↗`;
       signingSavvy.href = `https://www.signingsavvy.com/search/${encodedTerm}`;
-      spreadTheSign.innerText = `🌐 Spread The Sign - ${termUpperCased}`;
+      spreadTheSign.innerText = `🌐 Spread The Sign - ${termUpperCased} ↗`;
       spreadTheSign.href = `https://www.spreadthesign.com/en.us/search/?q=${encodedTerm}`;
-      youglish.innerText = `📹 YouGlish - ASL videos with ${termUpperCased}`;
+      youglish.innerText = `📹 YouGlish - ASL videos with ${termUpperCased} ↗`;
       youglish.href = `https://youglish.com/pronounce/${encodedTerm}/signlanguage/asl`;
     } else {
       ALL.forEach((elem) => {
@@ -38,15 +38,11 @@ window.addEventListener("load", () => {
   });
   page();
 
-  document.getElementById("search").addEventListener(
-    "submit",
-    (e) => {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      const term = formData.get("term");
-      const encodedTerm = encodeURIComponent(term);
-      page(`/?s=${encodedTerm}`);
-    },
-    true
-  );
+  document.getElementById("search").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const term = formData.get("term");
+    const encodedTerm = encodeURIComponent(term);
+    page(`/?s=${encodedTerm}`);
+  });
 });
