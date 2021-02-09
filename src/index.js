@@ -9,6 +9,7 @@ const spreadTheSign = $("#spreadTheSign");
 const youglish = $("#youglish");
 const input = $("#input");
 const ALL = [handspeak, lifeprint, signingSavvy, spreadTheSign, youglish];
+const title = "howsign ❘ search multiple ASL dictonaries";
 
 page.configure({ window: window });
 
@@ -29,12 +30,15 @@ window.addEventListener("load", () => {
       spreadTheSign.href = `https://www.spreadthesign.com/en.us/search/?q=${encodedTerm}`;
       youglish.innerText = `📹 YouGlish - ASL videos with ${termUpperCased} ↗`;
       youglish.href = `https://youglish.com/pronounce/${encodedTerm}/signlanguage/asl`;
+
+      document.title = `${termUpperCased} | howsign`;
     } else {
       ALL.forEach((elem) => {
         elem.innerText = "";
         elem.href = "#";
       });
       input.value = "";
+      document.title = title;
     }
   });
   page();
