@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const term = qs.parse(ctx.querystring).s;
     if (term) {
       const termUpperCased = term.toUpperCase();
-      input.value = term.toUpperCase();
+      input.value = termUpperCased;
       const encodedTerm = encodeURIComponent(term);
       handspeak.innerText = "🤲 Handspeak - Search results ↗";
       handspeak.href = `https://www.google.com/search?&q=site%3Ahandspeak.com+${encodedTerm}`;

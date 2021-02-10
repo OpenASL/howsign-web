@@ -30,7 +30,7 @@
       class="min-h-screen flex justify-center bg-gray-50 dark:bg-gray-800 py-2 px-4 sm:px-6 lg:px-8"
     >
       <div class="max-w-md w-full space-y-8">
-        <div>
+        <header>
           <a href="/">
             <h1
               class="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white"
@@ -41,7 +41,7 @@
           <p class="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
             search multiple ASL dictionaries
           </p>
-        </div>
+        </header>
         <form class="mt-8 space-y-6" id="search">
           <div
             class="bg-white dark:bg-gray-900 flex items-center rounded-full shadow-lg"
@@ -49,12 +49,13 @@
             <label for="term" class="sr-only">Word or phrase</label>
             <input
               autofocus
+              id="input"
+              name="term"
               class="rounded-l-full dark:bg-gray-900 w-full py-4 px-6 text-gray-700 dark:text-gray-100 leading-tight focus:outline-none"
               placeholder="word or phrase..."
               type="search"
-              name="term"
+              enterkeyhint="search"
               maxlength="30"
-              id="input"
             />
             <div class="p-4">
               <button
