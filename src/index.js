@@ -1,5 +1,4 @@
 import page from "page";
-import qs from "qs";
 
 page.configure({ window: window });
 const $ = document.querySelector.bind(document);
@@ -13,8 +12,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const youglish = $("#youglish");
   const input = $("#search input");
   const ALL = [handspeak, lifeprint, signingSavvy, spreadTheSign, youglish];
-  page("*", (ctx) => {
-    const term = qs.parse(ctx.querystring).s;
+  page("/s/:term", (ctx) => {
+    const term = ctx.params.term;
     if (term) {
       const termUpperCased = term.toUpperCase();
       input.value = termUpperCased;
@@ -47,11 +46,6 @@ window.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const term = formData.get("term").trim();
-    if (term) {
-      const encodedTerm = encodeURIComponent(term);
-      page(`/?s=${encodedTerm}`);
-    } else {
-      page("/");
-    }
+    term ? page(`/s/${term}`) : page("/");
   });
 });

@@ -19,7 +19,6 @@
     "tailwindcss": "^2.0.3"
   },
   "dependencies": {
-    "page": "^1.11.6",
-    "qs": "^6.9.6"
+    "page": "^1.11.6"
   }
 }
