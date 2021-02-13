@@ -1,9 +1,11 @@
 import page from "page";
 import qs from "qs";
+import YouGlishWidget from "./youGlishWidget";
 
 page.configure({ window: window });
 const $ = document.querySelector.bind(document);
 const title = "howsign ❘ search multiple ASL dictonaries";
+const youGlishWidget = new YouGlishWidget("youglish-widget");
 
 window.addEventListener("DOMContentLoaded", () => {
   const handspeak = $("#handspeak");
@@ -30,6 +32,10 @@ window.addEventListener("DOMContentLoaded", () => {
       youglish.innerText = `📹 YouGlish - ASL videos with ${termUpperCased} ↗`;
       youglish.href = `https://youglish.com/pronounce/${encodedTerm}/signlanguage/asl`;
 
+      youGlishWidget.ready().then((widget) => {
+        widget.fetch(termUpperCased, "signlanguages", "asl");
+      });
+
       document.title = `${termUpperCased} | howsign`;
     } else {
       ALL.forEach((elem) => {
@@ -37,6 +43,8 @@ window.addEventListener("DOMContentLoaded", () => {
         elem.href = "#";
       });
       input.value = "";
+
+      youGlishWidget.destroy();
 
       document.title = title;
     }
