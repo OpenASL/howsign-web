@@ -1,6 +1,6 @@
 import page from "page";
 import qs from "qs";
-import YouGlishWidget from "./YouGlishWidget";
+import YouGlishWidget from "./youglish-widget";
 
 page.configure({ window: window });
 const $ = document.querySelector.bind(document);
