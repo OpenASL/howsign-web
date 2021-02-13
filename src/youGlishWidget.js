@@ -24,19 +24,21 @@ export default class YouGlishWidget {
     });
   }
   // NOTE: The YG.Widget needs to be re-instantiated after each search.
-  //   Otherwise, the language gets reset
+  //   Otherwise, the language gets reset.
   getWidget() {
     const isDarkMode =
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches;
     return new YG.Widget(this.id, {
       components: 92, // controls+caption+speed+title
-      backgroundColor: isDarkMode ? colors.coolGray[800] : colors.coolGray[50],
-      textColor: isDarkMode ? colors.coolGray[400] : colors.coolGray[800],
-      captionColor: isDarkMode ? colors.coolGray[200] : colors.coolGray[500],
-      markerColor: isDarkMode ? colors.amber[800] : colors.amber[200],
       autoStart: 0,
-      // TODO: Match site theme
+      backgroundColor: isDarkMode ? colors.coolGray[800] : colors.coolGray[50],
+      textColor: isDarkMode ? colors.coolGray[400] : colors.coolGray[500],
+      captionColor: isDarkMode ? colors.coolGray[200] : colors.coolGray[500],
+      markerColor: isDarkMode ? colors.amber[700] : colors.amber[200],
+      linkColor: isDarkMode ? colors.indigo[300] : colors.indigo[600],
+      keywordColor: colors.amber[500],
+      queryColor: colors.amber[500],
     });
   }
   destroy() {
