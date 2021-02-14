@@ -3,3 +3,8 @@
 @tailwind components;
 
 @tailwind utilities;
+
+/* Hide loading indicator for YouGlish widget */
+.ygProgress {
+  display: none;
+}
