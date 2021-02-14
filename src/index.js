@@ -4,7 +4,7 @@ import YouGlishWidget from "./youglish-widget";
 
 page.configure({ window: window });
 const $ = document.querySelector.bind(document);
-const title = "howsign ❘ search multiple ASL dictonaries and videos";
+const title = "howsign ❘ search multiple ASL dictionaries and videos";
 const youGlishWidget = new YouGlishWidget("youglish-widget");
 
 window.addEventListener("DOMContentLoaded", () => {
