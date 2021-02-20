@@ -32,7 +32,7 @@ export default class YouGlishWidget {
     return new YG.Widget(this.id, {
       components: 92, // controls+caption+speed+title
       autoStart: 0,
-      backgroundColor: isDarkMode ? colors.coolGray[800] : colors.coolGray[50],
+      backgroundColor: isDarkMode ? colors.coolGray[800] : colors.white,
       textColor: isDarkMode ? colors.coolGray[400] : colors.coolGray[500],
       captionColor: isDarkMode ? colors.coolGray[200] : colors.coolGray[500],
       markerColor: isDarkMode ? colors.amber[700] : colors.amber[200],
