@@ -1,5 +1,4 @@
 import page from "page";
-import qs from "qs";
 import YouGlishWidget from "./youglish-widget";
 
 page.configure({ window: window });
@@ -16,7 +15,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const input = $("#search input");
   const ALL = [handspeak, lifeprint, signingSavvy, spreadTheSign, youglish];
   page("*", (ctx) => {
-    const term = qs.parse(ctx.querystring).s;
+    const params = new URLSearchParams(ctx.querystring);
+    const term = params.get("s");
     if (term) {
       const termUpperCased = term.toUpperCase();
       input.value = termUpperCased;
