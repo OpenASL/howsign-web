@@ -29,6 +29,8 @@ window.addEventListener("DOMContentLoaded", () => {
       signingSavvy.href = `https://www.signingsavvy.com/search/${encodedTerm}`;
       spreadTheSign.innerText = `🌐 Spread The Sign - ${termUpperCased} ↗`;
       spreadTheSign.href = `https://www.spreadthesign.com/en.us/search/?q=${encodedTerm}`;
+      aslSignbank.innerText = `📜 ASL Signbank - ${termUpperCased} ↗`;
+      aslSignbank.href = `https://aslsignbank.haskins.yale.edu/signs/search/?keyword=${encodedTerm}`;
       youglish.innerText = `📹 YouGlish - ASL videos with ${termUpperCased} ↗`;
       youglish.href = `https://youglish.com/pronounce/${encodedTerm}/signlanguage/asl`;
 
