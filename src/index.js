@@ -11,9 +11,17 @@ window.addEventListener("DOMContentLoaded", () => {
   const lifeprint = $("#lifeprint");
   const signingSavvy = $("#signingSavvy");
   const spreadTheSign = $("#spreadTheSign");
+  const aslSignbank = $("#aslSignbank");
   const youglish = $("#youglish");
   const input = $("#search input");
-  const ALL = [handspeak, lifeprint, signingSavvy, spreadTheSign, youglish];
+  const ALL = [
+    handspeak,
+    lifeprint,
+    signingSavvy,
+    spreadTheSign,
+    aslSignbank,
+    youglish,
+  ];
   page("*", (ctx) => {
     const params = new URLSearchParams(ctx.querystring);
     const term = params.get("s");
