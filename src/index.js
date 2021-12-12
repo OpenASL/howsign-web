@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
       aslSignbank.innerText = `📜 ASL Signbank - ${termUpperCased} ↗`;
       aslSignbank.href = `https://aslsignbank.haskins.yale.edu/signs/search/?keyword=${encodedTerm}`;
       youglish.innerText = `📹 YouGlish - ASL videos with ${termUpperCased} ↗`;
-      youglish.href = `https://youglish.com/pronounce/${encodedTerm}/signlanguage/asl`;
+      youglish.href = `https://youglish.com/pronounce/${encodedTerm}/signlanguage/us`;
 
       youGlishWidget.ready().then((widget) => {
         widget.fetch(termUpperCased, "signlanguages", "asl");
