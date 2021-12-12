@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
       youglish.href = `https://youglish.com/pronounce/${encodedTerm}/signlanguage/us`;
 
       youGlishWidget.ready().then((widget) => {
-        widget.fetch(termUpperCased, "signlanguages", "asl");
+        widget.fetch(termUpperCased, "signlanguages", "us");
       });
 
       document.title = `${termUpperCased} | howsign`;
