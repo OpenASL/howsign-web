@@ -75,6 +75,33 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 href="#"
+                id="aslCore"
+              ></a>
+            </li>
+            <li>
+              <a
+                class="my-4 text-indigo-600 hover:text-indigo-500 dark:text-indigo-300 dark:hover:text-indigo-400"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="#"
+                id="aslSignbank"
+              ></a>
+            </li>
+            <li>
+              <a
+                class="my-4 text-indigo-600 hover:text-indigo-500 dark:text-indigo-300 dark:hover:text-indigo-400"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="#"
+                id="aslSignbank"
+              ></a>
+            </li>
+            <li>
+              <a
+                class="my-4 text-indigo-600 hover:text-indigo-500 dark:text-indigo-300 dark:hover:text-indigo-400"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="#"
                 id="handspeak"
               ></a>
             </li>
@@ -111,7 +138,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 href="#"
-                id="aslSignbank"
+                id="stemDictionary"
               ></a>
             </li>
             <li>
@@ -132,6 +159,23 @@
     </div>
 
     <script type="module" src="./index.js"></script>
-    <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"sloria",utcoffset:"-4"}))};sessionStorage.setItem("_swa","1");</script>
+    <script>
+      if (
+        !sessionStorage.getItem("_swa") &&
+        document.referrer.indexOf(location.protocol + "//" + location.host) !==
+          0
+      ) {
+        fetch(
+          "https://counter.dev/track?" +
+            new URLSearchParams({
+              referrer: document.referrer,
+              screen: screen.width + "x" + screen.height,
+              user: "sloria",
+              utcoffset: "-4",
+            })
+        );
+      }
+      sessionStorage.setItem("_swa", "1");
+    </script>
   </body>
 </html>

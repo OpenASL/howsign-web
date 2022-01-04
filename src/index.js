@@ -7,19 +7,20 @@ const title = "howsign ❘ search multiple ASL dictionaries and videos";
 const youGlishWidget = new YouGlishWidget("youglish-widget");
 
 window.addEventListener("DOMContentLoaded", () => {
+  const aslSignbank = $("#aslSignbank");
   const handspeak = $("#handspeak");
   const lifeprint = $("#lifeprint");
   const signingSavvy = $("#signingSavvy");
   const spreadTheSign = $("#spreadTheSign");
-  const aslSignbank = $("#aslSignbank");
+  const stemDictionary = $("#stemDictionary");
   const youglish = $("#youglish");
   const input = $("#search input");
   const ALL = [
+    aslSignbank,
     handspeak,
     lifeprint,
     signingSavvy,
     spreadTheSign,
-    aslSignbank,
     youglish,
   ];
   page("*", (ctx) => {
@@ -29,6 +30,12 @@ window.addEventListener("DOMContentLoaded", () => {
       const termUpperCased = term.toUpperCase();
       input.value = termUpperCased;
       const encodedTerm = encodeURIComponent(term);
+      const dasherized = term.replace(/\s+/g, "-");
+      const encodedDasherizedTerm = encodeURIComponent(dasherized);
+      aslCore.innerText = `🍃 ASLCORE - ${termUpperCased} ↗`;
+      aslCore.href = `https://aslcore.org/search/?query=${termUpperCased}&architecture=1&art=1&biology=1&computerscience=1&engineering=1&literature=1&organicchemistry=1&philosophy=1&physics=1&sustainability=1`;
+      aslSignbank.innerText = `📜 ASL Signbank - ${termUpperCased} ↗`;
+      aslSignbank.href = `https://aslsignbank.haskins.yale.edu/signs/search/?keyword=${encodedTerm}`;
       handspeak.innerText = "🤲 Handspeak - Search results ↗";
       handspeak.href = `https://www.google.com/search?&q=site%3Ahandspeak.com+${encodedTerm}`;
       lifeprint.innerText = "🧬 Lifeprint - Search results ↗";
@@ -37,8 +44,8 @@ window.addEventListener("DOMContentLoaded", () => {
       signingSavvy.href = `https://www.signingsavvy.com/search/${encodedTerm}`;
       spreadTheSign.innerText = `🌐 Spread The Sign - ${termUpperCased} ↗`;
       spreadTheSign.href = `https://www.spreadthesign.com/en.us/search/?q=${encodedTerm}`;
-      aslSignbank.innerText = `📜 ASL Signbank - ${termUpperCased} ↗`;
-      aslSignbank.href = `https://aslsignbank.haskins.yale.edu/signs/search/?keyword=${encodedTerm}`;
+      stemDictionary.innerText = `🔬 STEM Dictionary - ${termUpperCased} ↗`;
+      stemDictionary.href = `https://deaftec.org/stem-dictionary/dictionary_term/${encodedDasherizedTerm}/`;
       youglish.innerText = `📹 YouGlish - ASL videos with ${termUpperCased} ↗`;
       youglish.href = `https://youglish.com/pronounce/${encodedTerm}/signlanguage/us`;
 
