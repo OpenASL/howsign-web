@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
       aslCore.innerText = `🍃 ASLCORE - ${termUpperCased} ↗`;
       aslCore.href = `https://aslcore.org/search/?query=${termUpperCased}&architecture=1&art=1&biology=1&computerscience=1&engineering=1&literature=1&organicchemistry=1&philosophy=1&physics=1&sustainability=1`;
       aslSignbank.innerText = `📜 ASL Signbank - ${termUpperCased} ↗`;
-      aslSignbank.href = `https://aslsignbank.haskins.yale.edu/signs/search/?keyword=${encodedTerm}`;
+      aslSignbank.href = `https://aslsignbank.haskins.yale.edu/signs/search/?translation=${encodedTerm}`;
       handspeak.innerText = "🤲 Handspeak - Search results ↗";
       handspeak.href = `https://www.google.com/search?&q=site%3Ahandspeak.com+${encodedTerm}`;
       lifeprint.innerText = "🧬 Lifeprint - Search results ↗";
